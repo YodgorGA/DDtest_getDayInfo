@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 style="padding: 10px" id="outputField">fasfs</h1>
+    <form>
+        <input type="text" id='date'/>
+        <button type="submit" id="getDayInfoBtn">Button</button>
+    </form>
+    <script>
+        const field = document.querySelector('#outputField');
+        const btn = document.querySelector('#getDayInfoBtn');
+        const selectedDate = document.querySelector('#date');
+
+        btn.addEventListener('click', (e)=>{
+            e.preventDefault();
+            let newDate = selectedDate.value;
+            let dataArr = newDate.split('.');
+            let dateInDateFormat = new Date(dataArr[2],dataArr[1],dataArr[0]);
+            stringDate = String(dateInDateFormat);
+            newDataArr = stringDate.split(' ');
+            let formatedArr = [];
+            formatedArr.push(newDataArr[0],newDataArr[1],newDataArr[3]);
+            field.innerHTML = String(formatedArr[0]+' '+formatedArr[1]+' '+' '+formatedArr[2]) + ' Тут еще нужно через оператор if реализовать неделю, но я не успеваю';
+            console.log(formatedArr);
+        })
+        
+
+    </script>
+</body>
+</html>
